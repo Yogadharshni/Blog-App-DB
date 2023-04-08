@@ -24,7 +24,8 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 const PORT = 4000;
-mongoose.connect('mongodb+srv://blogapp:blogapp@cluster0.d21gs4v.mongodb.net/?retryWrites=true&w=majority')
+const DB_URL = 'mongodb+srv://blogapp:blogapp@cluster0.d21gs4v.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(DB_URL)
 
 app.get('/', async (req, res) => {
     res.json('Welcome!!!')
