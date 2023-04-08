@@ -26,6 +26,10 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 const PORT = 4000;
 mongoose.connect('mongodb+srv://blogapp:blogapp@cluster0.d21gs4v.mongodb.net/?retryWrites=true&w=majority')
 
+app.get('/', async (req, res) => {
+    res.json('Welcome!!!')
+});
+
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
     try {
